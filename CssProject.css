@@ -1,0 +1,228 @@
+body{background:url('Project_Images/wellcom.jpg');
+background-size: cover;
+max-height:600px;
+min-height:auto;
+}
+/* #container{width:100%;height: 400px;} */
+
+#alpha{
+position:relative;width:100%;
+text-align: center;margin-top: 5px;
+padding: 20px;
+/* background: #fff */
+background-color:rgba(2,2,2, 0.42);
+border-radius:.5rem;
+display:none;
+}
+span{
+    width:45px;
+    height:45px;
+    position:relative;
+    display: inline-block;
+    border-radius: .4rem;
+    padding:1px;
+    margin: 10px;
+    color:white;background-color: blue;
+    font-size:30px;
+    line-height:45px;
+    cursor:pointer;
+}
+    @media (max-width:992px) {
+        
+        span{
+            width:30px;
+            height:30px;
+            border-radius: .4rem;
+            padding:1px;
+            margin: 2px;
+            font-size:22px;
+            line-height: 32px;
+           }
+
+    }
+    @media (max-width:1200px) {
+        
+        span{
+            width:32px;
+            height:32px;
+            border-radius: .4rem;
+            padding:1px;
+            margin: 2px;
+            font-size:25px;
+            line-height: 32px
+           }
+
+    }
+    .imgDiv{
+        width:100%;
+        margin-top:10px;
+    }
+
+    #pict img{
+        width:100%;
+        max-width: 100%;
+        max-height:430px;
+        border-radius: .7rem;
+        
+    }
+    #myimg{
+        display:none;
+    }
+    @media (max-width:992px) {
+        #pict img{
+            width:100%;
+            max-width: 100%;
+            max-height:300px;
+        }
+    }
+    @media (max-width:1200px) {
+        #pict img{
+            width:100%;
+            max-width: 100%;
+            max-height:350px;
+        }
+    }
+    .ErrDiv{
+        margin:5px 15px 5px 15px;
+        width: 100%;
+       
+    }
+#error{margin:0;width:100%;display:none}
+@media (max-width:768px) {
+    .ErrDiv{
+        margin:5px 15px 5px 15px;
+        width: 100%;
+       
+    }
+}
+.close{z-index:9999}
+
+/* Don't Forget the row of container in bootstrap has a margin-left:-15 , margin-right:-15 Don't Forget to Reset theses  values  */
+.RowHeader{
+    margin:0;
+}
+.Header{
+    width:100%;
+    color:#0000ff;
+    font-size:200%;text-align: center;
+    font-weight: bold;
+    background: white;
+    border: 3px blue solid;
+    border-radius: 23px;
+    margin-bottom: 15px;
+    }
+    .header2{
+    width:1000px;height:30px;
+    color:#000000;
+    font-size:150%;margin-top: 10px;
+    }
+.label{
+    font-size:25px;
+    color:#fff;
+    font-weight: bold;}
+    @media (max-width:992px) {
+        .label{font-size:16px;}
+    }
+    @media (max-width:1200px) {
+        .label{ font-size:20px;}
+    }
+
+    .BtnDiv .btn-primary{width: 100%;}
+    @media (max-width:768px) {
+        .BtnDiv{
+            margin:5px 0 5px 0;
+        }
+    }
+    .RowDiv3{
+        margin:10px 0 0 0;
+    }
+
+.WordDiv{
+margin:10px 0 10px 0;
+color:red;font-size: 35px;
+/* Note : i Clear the background and shadow of this div because i use the buuton to display the word inside it to show the PopOver*/
+/* background: #fff; */
+/* background-color: #0069d9;  to setting with PopOver Button */
+text-align:center; 
+font-size:20px;
+font-weight: bold;
+/* ,-3px -3px #000 1px 2px outset; */
+/* box-shadow: 2px 2px 0 0.2rem rgba(136, 10, 153, 0.23) inset, -1px -2px 0 0.2rem rgba(51, 12, 194, 0.6) inset; */
+/* box-shadow:top left right bottom color inset */
+display: none;
+
+}
+.PopOver{
+    font-size:20px;
+font-weight: bold;
+}
+
+
+/* Don't Forget the row of container in bootstrap has a margin-left:-15 , margin-right:-15 Don't Forget to Reset theses  values  */
+.RowWordAudio{
+    margin:0;
+}
+.DivAudio{
+    position: relative;
+    /* display: none */
+}
+.DivAudio .Audio{
+    position: absolute;
+    right:0;
+
+
+    /* display: none; */
+}
+
+
+@media (max-width:578px) {
+    .DivAudio .Audio{
+        /* reset the position to default value  */
+        position:static;}
+    .DivAudio{
+       margin-top:10px;
+       display: flex;
+       align-items:center;
+       justify-content: center;
+    }
+    .WordDiv{
+        margin-bottom: 0;
+    }
+}
+@media (max-width:768px) {
+    .DivAudio .Audio{
+        /* reset the position to default value  */
+        position:static;}
+    .DivAudio{
+       margin-top:10px;
+       display: flex;
+       align-items:center;
+       justify-content: center;
+    }
+    .WordDiv{
+        margin-bottom: 0;
+    }
+}
+@media (min-width:578px) {
+    .DivAudio{
+       margin-top:10px;
+
+    }
+}
+
+
+/*  Dispay the Next classes to make animation on it*/
+/*  ,.LettersPicturesAnimation,.WordAudioAnimation  */
+/* .HeaderAnimation,.ControlAnimation{
+ display:none;
+} */
+/* Alpha Span Active */
+/* span:focus{
+    background-color: #e7183b;
+    color:#fff;
+} */
+
+span.active{
+    background-color: red;
+    color:#fff;
+}

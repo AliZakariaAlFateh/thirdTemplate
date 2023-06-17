@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Learn_Letters</title>
+		<!--using Bootstrap 4-->
+		<link rel="stylesheet" href="bootstrap4/bootstrap.min.css">
+		<link rel="stylesheet" href="CssProject.css">
+		<link rel="stylesheet" href="animate.css">
+	</head>
+    <body>
+
+
+		<!-- Header Section-->
+		<div class="container">
+			<div class="row RowHeader catch-header HeaderAnimation wow slideInLeft" data-wow-duration="3s" data-wow-delay="400ms">
+				<div class="col-xs-12 Header">Learning English Alphabet</div>
+			</div>
+		</div>
+        
+		<!-- Control Field Section-->
+		<div class="container text-center ControlAnimation">
+             <div class="row ">
+				<div class="col-lg-4 col-md-5 col-sm-7 wow slideInLeft" data-wow-duration="4s" data-wow-delay="400ms">
+					<label class="label">enter the number of letters :</label>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-5 wow slideInDown" data-wow-duration="4s" data-wow-delay="300ms">
+					<!-- <input type="number" class="form-control input-lg" placeholder="Type the letter number" id="numbers" > -->
+                    <input type="text" class="form-control input-lg" placeholder="Type number of letters or a word " id="number_word" >
+				</div>
+
+				<div class="col-lg-4 col-md-3 col-sm-12 BtnDiv wow slideInRight" data-wow-duration="4s" data-wow-delay="400ms" data-wow-offset="10">
+					<button class="btn btn-primary" id="submit">display the  letters</button>
+				</div>
+
+				<div class="col-xs-12 center-block ErrDiv">
+					<p class="alert alert-danger" id="error"></p>
+				</div>
+
+			 </div>
+		</div>
+
+		<!-- Show Letters And Pictures Section -->
+        <div class="container LettersPicturesAnimation">
+			<div class="row RowDiv3 ">
+				<div class="col-xs-12 SpanLetters" id="alpha">
+
+				</div>
+				<div class="col-xs-12 imgDiv" id="pict">
+					<img class="img-responsive img-thumbnail center-block " src="Project_Images/wellcom.jpg" alt="wellcom to alpapet" id="myimg">
+				</div>
+			</div>
+		</div>
+
+        
+		<!-- Word and Audio  Section -->
+		<div class="container WordAudioAnimation">
+			<div class="row RowWordAudio ">
+				<div class="col-md-6 col-sm-12 WordDiv" id="word"></div>
+				<!-- lightSpeedOut , rotateIn , rotateInDownLeft , rotateInDownRight , rotateOutDownLeft ,slideInDown , slideInRight ,flipOutX 
+				fadeOutUpBig , swing
+				--> 
+				<!--bounceInUp-->
+				<div class="col-md-6 col-sm-12 DivAudio wow bounceInUp" data-wow-duration="6s" data-wow-delay="400ms">
+					<audio controls src="Records/Hello.m4a" id="audio" class="Audio">	</audio>
+				</div>
+			</div>
+		</div>
+
+		<script src="jquery-3.5.1.min.js"></script>
+		<script src="bootstrap4/popper.min.js"></script>
+		<script src="bootstrap4/bootstrap.min.js"></script>
+		<script src="jQStyle.js"></script>
+    	<script src="project.js"></script>
+		<script src="wow.min.js"></script>
+		<script>
+			new WOW().init();
+		</script>
+    </body>
+</html>

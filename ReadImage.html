@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Center the form */
+.center{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width: 70%;
+    transform:translateX(-20%) translateY(-20%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+}
+
+form{
+    text-align: center;
+}
+
+img{
+    width:200px;
+    height:auto;
+}
+
+#errorMessage{
+    color:red;
+}
+p{
+    text-align: left;
+}
+#info{
+    display: none;
+    width:70%;
+    height:auto;
+    margin:auto;
+    
+}
+
+#info p{
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+
+
+
+    <div class="center">
+        <form>
+            <h4 id="errorMessage"></h4>
+            <h2>Image Previewer</h2>
+            <input type="file" id="imgInp">
+            <p></p>
+            <img id="preview">
+            <div id="info">
+                <i>File Info:</i>
+                <p><strong>Image Name:</strong> <span class="img-name">be-happy.jpg</span></p>
+                <p><strong>Image Type:</strong><span class="img-type">image/jpeg</span></p>
+                <p><strong>Image Size:</strong><span class="img-size">116019bytes</span></p>    
+            </div>
+        </form>
+            </div>
+
+
+
+    <!-- <input type='file' accept='image/*' onchange='openFile(event)'><br>
+    <img id='output' style="height:100px; width:100px;"> -->
+    <!-- <input type='file' accept='image/*' onchange='openFile(event)'> -->
+    <script>
+
+        // var AudioSource="Records"+"/"+'lion'+'.'+'m4a';
+        // const Reader = new openFile(AudioSource)
+
+/*         var openFile = function(file) {
+            var input = file.target;
+            var reader = new FileReader();
+            reader.onload = function(){
+            var dataURL = reader.result;
+            var output = document.getElementById('output');
+            output.src = dataURL;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }; */
+
+        ////////////////////////
+        const img = document.getElementById("imgInp");
+let info = document.getElementById("info");
+let errorMessage = document.getElementById("errorMessage");
+const imagePreview = document.getElementById("preview");
+img.addEventListener("change", (e) => {
+    const imgDetails = document.querySelector("input[type=file]").files[0];
+    if (imgDetails) {
+        info.style.display = "block";
+        document.querySelector(".img-name").innerText = imgDetails.name;
+        document.querySelector(".img-type").innerText = imgDetails.type;
+        document.querySelector(".img-size").innerText = imgDetails.size + "bytes";
+        previewImage(imgDetails);
+    } else {
+        imagePreview.src = ""
+        errorMessage.innerText = "Please select a picture";
+        console.error("Please select a picture");
+        info.style.display = "none";
+    }
+
+})
+
+function previewImage(imgD) {
+    const reader = new FileReader();
+
+    // PREVIEW
+    reader.addEventListener("load", function () {
+        imagePreview.src = reader.result;
+    })
+
+    // CHECK IF THERE IS SELECTION 
+    if (imgD) {
+        // CHECK IF THE FILE IS AN IMAGE
+        if (imgD.type === "image/jpeg" || imgD.type == "image/jpg" || imgD.type == "image/gif" || imgD.type == "image/png") {
+            errorMessage.innerText = "";
+
+            // CONVERTS FILE TO BASE 64
+            reader.readAsDataURL(imgD);
+        } else {
+            errorMessage.innerText = "File type should be an image"
+            imagePreview.src = "";
+        }
+    }
+    // IF NO IMAGE
+    else {
+        imagePreview.src = ""
+        errorMessage.innerText = "Please select a picture";
+    }
+}
+    </script>
+</body>
+</html>
